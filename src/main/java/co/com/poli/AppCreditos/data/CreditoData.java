@@ -21,8 +21,8 @@ public class CreditoData {
         
         listaCredito = new ArrayList<Credito>(){
             {
-                add(new Credito(10D, 1037645832D,"pablo perez",500D,Boolean.TRUE,
-                                Boolean.TRUE,Boolean.TRUE));
+                add(new Credito("001", "1020", "Yesica de herlen", 200D, "independiente", "vivienda"
+                        , "si"));
                               
             }
         };
@@ -35,6 +35,7 @@ public class CreditoData {
     public static void setListaCreditos(List<Credito> aListaCreditos) {
         listaCredito = aListaCreditos;
     }
+    
     
     
 }

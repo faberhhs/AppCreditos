@@ -9,50 +9,39 @@ import co.com.poli.AppCreditos.data.CreditoData;
 import co.com.poli.AppCreditos.model.Credito;
 import java.util.List;
 import co.com.poli.AppCreditos.Dao.ICreditoDao;
+import co.com.poli.AppCreditos.jpacontroller.TblcreditosJpaController;
+import co.com.poli.AppCreditos.model.Tblcreditos;
+import co.com.poli.AppCreditos.util.JPAFactory;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author giovanny
  */
-public class CreditoDaoImpl implements ICreditoDao{
+public class CreditoDaoImpl implements ICreditoDao {
 
     @Override
-    public List<Credito> obtenerListaCreditos() {
-        return CreditoData.getListaCreditos();
+    public List<Tblcreditos> obtenerListaCreditos() {
+        List<Tblcreditos> CreList = new ArrayList<>();
+        TblcreditosJpaController tblcreditosJpaController = new TblcreditosJpaController(JPAFactory.getFACTORY());
+        CreList = tblcreditosJpaController.findTblcreditosEntities();
+        return CreList;
     }
 
     @Override
-    public Credito obtenerCredito(Double numcredito) {
-        Credito credito = null;
-        List<Credito> listaCreditos = CreditoData.getListaCreditos();
-        for (Credito userLista : listaCreditos) {
-            if(userLista.getNumcredito().equals(numcredito)){
-                credito = userLista;
-            }
+    public Boolean crearCredito(Tblcreditos credito) {
+        Boolean sw = false;
+        try {
+            TblcreditosJpaController tblcreditosJpaController = new TblcreditosJpaController(JPAFactory.getFACTORY());
+            tblcreditosJpaController.create(credito);
+
+        } catch (Exception ex) {
+            sw = true;
+            Logger.getLogger(CreditoDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return credito;
+        return sw;
     }
-
-    @Override
-    public String crearCredito(Credito credito) {
-        List<Credito> listaCreditos = CreditoData.getListaCreditos();
-        listaCreditos.add(credito);
-        CreditoData.setListaCreditos(listaCreditos);
-        return "credito creado";
-    }
-
-/*
-    @Override
-    public Credito obtenerUsuario(String email, String clave) {
-        Credito usuario = null;
-        List<Credito> obtenerListaUsuarios = obtenerListaUsuarios();
-        for (Credito user : obtenerListaUsuarios) {
-            if(user.getEmail().equals(email) && 
-               user.getClave().equals(clave)){
-                usuario = user;
-            }
-        }
-        return usuario;
-    }   */ 
 
 }

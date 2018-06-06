@@ -13,15 +13,15 @@ import java.util.Objects;
  */
 public class Credito {
     
-    private Double numcredito;
-    private Double documento;
+    private String numcredito;
+    private String documento;
     private String nombres;
     private Double monto;
-    private Boolean tipoTrabajador;
-    private Boolean tipoCredito;
-    private Boolean trabaja;
+    private String tipoTrabajador;
+    private String tipoCredito;
+    private String trabaja;
 
-    public Credito(Double numcredito, Double documento, String nombres, Double monto, Boolean tipoTrabajador, Boolean tipoCredito, Boolean trabaja) {
+    public Credito(String numcredito, String documento, String nombres, Double monto, String tipoTrabajador, String tipoCredito, String trabaja) {
         this.numcredito = numcredito;
         this.documento = documento;
         this.nombres = nombres;
@@ -31,61 +31,7 @@ public class Credito {
         this.trabaja = trabaja;
     }
 
-    public Double getNumcredito() {
-        return numcredito;
-    }
-
-    public void setNumcredito(Double numcredito) {
-        this.numcredito = numcredito;
-    }
-
-    public Double getDocumento() {
-        return documento;
-    }
-
-    public void setDocumento(Double documento) {
-        this.documento = documento;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public Double getMonto() {
-        return monto;
-    }
-
-    public void setMonto(Double monto) {
-        this.monto = monto;
-    }
-
-    public Boolean getTipoTrabajador() {
-        return tipoTrabajador;
-    }
-
-    public void setTipoTrabajador(Boolean tipoTrabajador) {
-        this.tipoTrabajador = tipoTrabajador;
-    }
-
-    public Boolean getTipoCredito() {
-        return tipoCredito;
-    }
-
-    public void setTipoCredito(Boolean tipoCredito) {
-        this.tipoCredito = tipoCredito;
-    }
-
-    public Boolean getTrabaja() {
-        return trabaja;
-    }
-
-    public void setTrabaja(Boolean trabaja) {
-        this.trabaja = trabaja;
-    }
+    
 
     @Override
     public int hashCode() {
@@ -114,6 +60,62 @@ public class Credito {
             return false;
         }
         return true;
+    }
+
+    public String getNumcredito() {
+        return numcredito;
+    }
+
+    public void setNumcredito(String numcredito) {
+        this.numcredito = numcredito;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public Double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(Double monto) {
+        this.monto = monto;
+    }
+
+    public String getTipoTrabajador() {
+        return tipoTrabajador;
+    }
+
+    public void setTipoTrabajador(String tipoTrabajador) {
+        this.tipoTrabajador = tipoTrabajador;
+    }
+
+    public String getTipoCredito() {
+        return tipoCredito;
+    }
+
+    public void setTipoCredito(String tipoCredito) {
+        this.tipoCredito = tipoCredito;
+    }
+
+    public String getTrabaja() {
+        return trabaja;
+    }
+
+    public void setTrabaja(String trabaja) {
+        this.trabaja = trabaja;
     }
 
     

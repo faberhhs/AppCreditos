@@ -6,6 +6,7 @@
 package co.com.poli.AppCreditos.Dao;
 
 import co.com.poli.AppCreditos.model.Credito;
+import co.com.poli.AppCreditos.model.Tblcreditos;
 import java.util.List;
 
 /**
@@ -14,9 +15,7 @@ import java.util.List;
  */
 public interface ICreditoDao {
   
-    List<Credito> obtenerListaCreditos();
-    Credito obtenerCredito(Double numcredito);
-    String crearCredito(Credito credito);
-   // Credito obtenerUsuario(String email, String clave);
+    List<Tblcreditos> obtenerListaCreditos();
+    Boolean crearCredito(Tblcreditos credito);
     
 }

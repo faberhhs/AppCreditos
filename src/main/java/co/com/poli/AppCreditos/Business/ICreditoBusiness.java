@@ -6,6 +6,7 @@
 package co.com.poli.AppCreditos.Business;
 
 import co.com.poli.AppCreditos.model.Credito;
+import co.com.poli.AppCreditos.model.Tblcreditos;
 import java.util.List;
 
 /**
@@ -14,8 +15,12 @@ import java.util.List;
  */
 public interface ICreditoBusiness {
     
-    List<Credito> obtenerListaCreditos();
-    Credito obtenerCredito(Double numcredito);
-    String crearCredito(Credito credito);
+    List<Tblcreditos> obtenerListaCreditos();
+    Boolean crearCredito(Tblcreditos credito);
+    String masUtiliza();
+    String acumulado();
+    String masPresta();
+    Boolean creditoExiste(String documento, String tipoCredito);
+   
     
 }
